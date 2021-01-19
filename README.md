@@ -54,7 +54,7 @@ Ros bietet die Möglichkeit zur Erstellung von Services und Messages eigener Dat
 
 ## Projektstruktur
  ### ROS Node-Struktur
- 
+ ![alt text](https://github.com/Horenhof/ROSproject/blob/master/image.jpg?raw=true)
  
 
  ### Struktur des neuronalen Netzes
