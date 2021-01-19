@@ -8,7 +8,6 @@
 * [Projektstruktur](#projektstruktur)
   * [ROS Node-Struktur](ros-node-struktur)
   * [Struktur des neuronalen Netzes](#struktur-des-neuronalen-netzes)
-* [Implementation](#implementation)
 * [Fazit](#fazit)
 * [Quellen](#quellen)
 
@@ -53,9 +52,30 @@ Ros bietet die Möglichkeit zur Erstellung von Services und Messages eigener Dat
 
 Neuronale Netze, oft auch als künstliche, neuronale Netze oder artificial neural networks, bezeichnet, sind informationsverarbeitende Systeme, die aus einer großen Anzahl einfacher Einheiten (Zellen, Neuronen) bestehen, die sich Informationen in Form der Aktivierung der Zellen über gerichtete Verbindungen (connections, links) zusenden.[3]
 
+### Deep Neural Networks :
+oft `Feedforword neural Networks` oder `multilayer perceptrons (MLPs)` gennant.[4]. Das Ziel von neuronalen Netzen ist es, eine Funktion zu approximieren. 
+</br>Zum Beispiel : Die Fuktion `y=a+bx`  wo `a=Achsenabschnitt der Ordinate` und  `b=Steigung`, ist eine `lineare Funktion`. Diese Lineare Funktion mappt das Input `X` zum Output `y`. Die Aufgabe des neuronalen Netzes ist es, die Parameter `a und b` zu trainieren oder lernen, damit sie das Output `Y` approximiert. [4]
 
+In Deep Learning oder Neuronalen Netzen geht es darum, dass man ein Input `X` hat, angenommen `X = Bild von einer handgeschriebenen Zahl`, und ein Output `Y`, angenommen `Y = was steht im Bild`. Der Rechner sieht das Bild als Zahlen, die in ein- oder mehrdimensionalem Array gespeichert sind. um dies zu verwirklichen, braucht man eine Lineare Gleichung, die die Beziehung zwischen `X` und `Y` darstellt. 
 
+### Lineare Regression
+Besteht ein Zusammenhang zwischen einer unabhängigen Variablen x und einer abhängigen Variablen y, der einer Geraden entspricht, so wird diese Problemstellung als lineare Regression behandelt und durch die Geradengleichung [5] </br>
 
+Y = Theta * X + B, Theta sind die learnbaren Parameter, die Input X zum Output Y mappen. aber wir kennen sie nicht. </br>
+Man kann aber einen beliebigen Wert für `theta` setzten. Und das Output mit dem richtigen Wert von `Y` vergleichen.</br>
+Im Falle vieler X Werte ist das Vergleichen sehr zeitaufwending, deshalb hat man eine Funktion eingefüht, die `Const Function` bezeichnet wird.
+
+### Const Function
+Die Const Funktion `oder Loss Function ` berechnet den Fehler von den Outpus der Linearen Regression Funktion, in dem sie die Distanz zwischen den wahren Labels und dem Output von unserer Funktion. </br> [6]
+Als Beispiel nehmen die ME `mean error` Funktion :</br>
+MSE = 1/n * sum(y - output)  wo `n` ist die Anzahl der Inputs `X`
+![quation](https://github.com/Horenhof/ROSproject/blob/master/cost.jpg?raw=true)</br>
+Wenn diese Distanz nah zum Null ist, bedeutet es, dass der Fehler sehr gering ist. und das hilft dabei, dass der approximierte Ausgabe unserer Funktion sehr nah zum wahren Wert von `Y`.
+
+### Training und Gradient Descent
+Die beliebigen Wert, die man `Theta` gibt, müssen trainiert werden, um die Outputs so zu approximieren, dass sie den wahren Werten nahkommen.
+Das Thema `Gradient Descent` wird hier nicht tiefgründlich geklärt. aber ganz kurz gesagt, die Aufgabe von `Gradient Descent` ist es, die lernbaren Parameter mithilfe von den mathematischen gleichung `Ableitung` zu manipulieren, [7]
+Lesen Sie über Ableitung unter disesm Link : https://www.studyhelp.de/online-lernen/mathe/ableiten/
 
 ## Projektstruktur
  ### ROS Node-Struktur
@@ -79,15 +99,29 @@ Neuronale Netze, oft auch als künstliche, neuronale Netze oder artificial neura
  ###### Die Beziehung zwischen den beiden Knoten ist im Graph ´"G2"´ visualisiert : ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/rosgraph2.png?raw=true)
 
  ### Struktur des neuronalen Netzes
-
-## Fazit
+ #### Dataset :
+ THE MNIST DATABASE of handwritten digits (60000 pics, (28 * 28) pixel)
+ #### Das Model :
+ Das Model ist ein `Neuronales Netz`, das aus Drei `fullyconnected` Schichten besteht.</br>
+ ##### Network :
+  * (fc1): Linear(in_features=784, out_features=128, bias=True)
+  * (fc2): Linear(in_features=128, out_features=64, bias=True)
+  * (fc3): Linear(in_features=64, out_features=10, bias=True)
+  * (dropout): Dropout(p=0.3, inplace=False)
+##### Loss Function : 
+* The negative log likelihood loss *for more information[8]*
+##### optimizer :
+* Adam Optimizer *for more Information [9]*
+Mehr Informationen sind im Jypeter notbook zu sehen.
 
 ## Quellen
 
 * [1] ROS official website. Was ist ROS ?. Abgerufen 18. Jan 2021, von https://www.ros.org/
 * [2] ROS Tutorials, Abgerufen am 18. Jan 2021, von https://wiki.ros.org/ROS/Tutorials
-* [3] Was sind neuronale Netze, Abgerufen am 18. Ja 2021 von http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/13/vlu/daten/neuronalenetze/einfuehrung.vlu.html
-
-
-
-
+* [3] Was sind neuronale Netze, Abgerufen am 18. Jan 2021 von http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/13/vlu/daten/neuronalenetze/einfuehrung.vlu.html
+* [4] Deep Learning Book, Chapter 6 Deep Feedforward Networks, Abgerufen am 18. Jan 2021 von https://www.deeplearningbook.org/contents/mlp.html 
+* [5] Allgemeine Multivariate Datenanalyse, Autoren :Prof. Dr. Guenter Gauglitz, Frank Dieterle, Dr. Manuela Reicher, Abgerufen am 18. Jan 2020 http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/13/vlu/daten/multivariate_datenanalyse_allg/multivar_datenanalyse_allg.vlu/Page/vsc/de/ch/13/anc/daten/multivar_datenanalyse_allg/lineareregression.vscml.html
+* [6] What is Mean Error?, Abgerufen am 18. Jan 2021 von https://www.statisticshowto.com/mean-error/#:~:text=The%20mean%20error%20is%20an,error%2C%20also%20called%20observational%20error.
+* [7] Chapter 8 Optimization for Training Deep Models, Abgerufen am 18. Jan 2021 von https://www.deeplearningbook.org/contents/optimization.html
+* [8] likelihood loss, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
+* [9] Adam Optimizer, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/optim.html
