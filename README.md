@@ -80,14 +80,14 @@ Lesen Sie über Ableitung unter disesm Link : https://www.studyhelp.de/online-le
  ### ROS Node-Struktur
  In dieser Applikation wurden die folgenden Knoten implementiert :
  ##### Kamera-Knoten : 
- Der Kamera-Kntoen definiert ein Thema (Topic) namesn ´"image_from_cam"´, das eine Nachricht vom Datentype "sensor_msgs/Image" veröffentlicht, sowie ein anderes Thema namens ´"int_from_cam"´, das eine Nachricht vom benutzerdefinierten Type "Num" veröffentlicht.
+ Der Kamera-Kntoen definiert ein Thema (Topic) namesn `"image_from_cam"`, das eine Nachricht vom Datentype `"sensor_msgs/Image"` veröffentlicht, sowie ein anderes Thema namens `"int_from_cam"`, das eine Nachricht vom benutzerdefinierten Type `"Num"` veröffentlicht.
  
  ##### Processor-Knoten : 
- Der Processor abonniert das Thema (topic) namens ´"image_from_cam"´, um das Image "frame" von der Kamera zu bekommen. 
+ Der Processor abonniert das Thema (topic) namens `"image_from_cam"`, um das Image `"frame"` von der Kamera zu bekommen. 
  Das Image wird im Processor bearbeitet (e.g Größe ändern, schneiden, ...usw) und zur Veröffentlichung vorbereitet.
  Processor definiert ein Thema (topic) namesn ´"processed_image"´, das das bearbeitete Image veröffentlicht.
  
- ###### Die Beziehung zwischen den beiden Knoten ist im Graph ´"G1"´ visualisiert : ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/rosgraph.png?raw=true)
+ ###### Die Beziehung zwischen den beiden Knoten ist im Graph `"G1"` visualisiert : ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/rosgraph.png?raw=true)
  
  ##### AIService-Knoten :
  AIService definiert ein Thema (topic) namens ´"predict_image"´, das eine Funktion zur Verfügung stellt, die ein Bild als Argument bekommt, um es mit hilfe eines Neuronalen Netzes zu klassifizieren. 
@@ -95,7 +95,7 @@ Lesen Sie über Ableitung unter disesm Link : https://www.studyhelp.de/online-le
  ##### Controller-Knoten :
  Controller abonniert zwei Themen (topics), das erste ist ´"int_from_cam"´ und das zweite ´"processed_image"´.
  Im Controller werden die Zeitstempel von beiden Nachrichten verglichen, wenn sie übereinstimmen, werden sie einer Funktion übergeben, die dementsprechen das Image an den AIService weiterleitet.
- ###### Die Beziehung zwischen den beiden Knoten ist im Graph ´"G2"´ visualisiert : ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/rosgraph2.png?raw=true)
+ ###### Die Beziehung zwischen den beiden Knoten ist im Graph `"G2"` visualisiert : ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/rosgraph2.png?raw=true)
 
  ### Struktur des neuronalen Netzes
  #### Dataset :
