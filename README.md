@@ -8,7 +8,6 @@
 * [Projektstruktur](#projektstruktur)
   * [ROS Node-Struktur](ros-node-struktur)
   * [Struktur des neuronalen Netzes](#struktur-des-neuronalen-netzes)
-* [Fazit](#fazit)
 * [Quellen](#quellen)
 
 
