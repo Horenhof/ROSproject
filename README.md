@@ -51,6 +51,11 @@ Ros bietet die Möglichkeit zur Erstellung von Services und Messages eigener Dat
 
 ### Neuronale Netze
 
+Neuronale Netze, oft auch als künstliche, neuronale Netze oder artificial neural networks, bezeichnet, sind informationsverarbeitende Systeme, die aus einer großen Anzahl einfacher Einheiten (Zellen, Neuronen) bestehen, die sich Informationen in Form der Aktivierung der Zellen über gerichtete Verbindungen (connections, links) zusenden.[3]
+
+
+
+
 
 ## Projektstruktur
  ### ROS Node-Struktur
@@ -63,8 +68,7 @@ Ros bietet die Möglichkeit zur Erstellung von Services und Messages eigener Dat
  Das Image wird im Processor bearbeitet (e.g Größe ändern, schneiden, ...usw) und zur Veröffentlichung vorbereitet.
  Processor definiert ein Thema (topic) namesn ´"processed_image"´, das das bearbeitete Image veröffentlicht.
  
- Die Beziehung zwischen den beiden Knoten ist im Graph ´"G1"´ visualisiert :
- ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/cameraToprecessor.svg?raw=true)
+ ###### Die Beziehung zwischen den beiden Knoten ist im Graph ´"G1"´ visualisiert : ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/rosgraph.png?raw=true)
  
  ##### AIService-Knoten :
  AIService definiert ein Thema (topic) namens ´"predict_image"´, das eine Funktion zur Verfügung stellt, die ein Bild als Argument bekommt, um es mit hilfe eines Neuronalen Netzes zu klassifizieren. 
@@ -72,17 +76,17 @@ Ros bietet die Möglichkeit zur Erstellung von Services und Messages eigener Dat
  ##### Controller-Knoten :
  Controller abonniert zwei Themen (topics), das erste ist ´"int_from_cam"´ und das zweite ´"processed_image"´.
  Im Controller werden die Zeitstempel von beiden Nachrichten verglichen, wenn sie übereinstimmen, werden sie einer Funktion übergeben, die dementsprechen das Image an den AIService weiterleitet.
- 
+ ###### Die Beziehung zwischen den beiden Knoten ist im Graph ´"G2"´ visualisiert : ![G1 Graph](https://github.com/Horenhof/ROSproject/blob/master/rosgraph2.png?raw=true)
 
  ### Struktur des neuronalen Netzes
-
-## Implementation
 
 ## Fazit
 
 ## Quellen
 
-
+* [1] ROS official website. Was ist ROS ?. Abgerufen 18. Jan 2021, von https://www.ros.org/
+* [2] ROS Tutorials, Abgerufen am 18. Jan 2021, von https://wiki.ros.org/ROS/Tutorials
+* [3] Was sind neuronale Netze, Abgerufen am 18. Ja 2021 von http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/13/vlu/daten/neuronalenetze/einfuehrung.vlu.html
 
 
 
