@@ -100,8 +100,11 @@ Lesen Sie über Ableitung unter disesm Link : https://www.studyhelp.de/online-le
  ### Struktur des neuronalen Netzes
  #### Dataset :
  THE MNIST DATABASE of handwritten digits (60000 pics, (28 * 28) pixel)
- #### Das Model :
- Das Model ist ein `Neuronales Netz`, das aus Drei `fullyconnected` Schichten besteht.</br>
+ #### Das Model no.1:
+ Das Model ist ein `Neuronales Netz`, das aus Drei `fullyconnected` Schichten besteht. eine Hidden-layer, input und output Layer</br>
+ #### Distribution :
+  * Train set
+  * Test set
  ##### Network :
   * (fc1): Linear(in_features=784, out_features=128, bias=True)
   * (fc2): Linear(in_features=128, out_features=64, bias=True)
@@ -110,7 +113,25 @@ Lesen Sie über Ableitung unter disesm Link : https://www.studyhelp.de/online-le
 ##### Loss Function : 
 * The negative log likelihood loss *for more information[8]*
 ##### optimizer :
-* Adam Optimizer *for more Information [9]*
+* SGD () Optimizer *for more Information [10]* (lr=0.01)
+Mehr Informationen sind im Jypeter notbook zu sehen.
+
+ #### Das Model no.2:
+ Das Model ist ein `Neuronales Netz`, das aus Fier `fullyconnected` Schichten besteht. zwei Hidden-layers, input und output Layer</br>
+  #### Distribution :
+  * Train set (geteilt auf "validation" und "train" set 
+  * Test set
+ ##### Network :
+  * (fc1): Linear(in_features=784, out_features=128, bias=True)
+  * (fc2): Linear(in_features=256, out_features=128, bias=True)
+  * (fc3): Linear(in_features=128, out_features=64, bias=True)
+  * (fc4): Linear(in_features=64, out_features=10, bias=True)
+  * (dropout): Dropout(p=0.3, inplace=False)
+
+##### Loss Function : 
+* The negative log likelihood loss 
+##### optimizer :
+* Adam Optimizer (lr=0.0003) *for more Information [9]* 
 Mehr Informationen sind im Jypeter notbook zu sehen.
 
 ## Quellen
@@ -124,3 +145,4 @@ Mehr Informationen sind im Jypeter notbook zu sehen.
 * [7] Chapter 8 Optimization for Training Deep Models, Abgerufen am 18. Jan 2021 von https://www.deeplearningbook.org/contents/optimization.html
 * [8] likelihood loss, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
 * [9] Adam Optimizer, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/optim.html
+* [10] SGD Optimiyzer, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/optim.html#algorithms
