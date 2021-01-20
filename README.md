@@ -113,7 +113,7 @@ Lesen Sie über Ableitung unter disesm Link : https://www.studyhelp.de/online-le
 ##### Loss Function : 
 * The negative log likelihood loss *for more information[8]*
 ##### optimizer :
-* SGD () Optimizer *for more Information [10]* (lr=0.01)
+* SGD () Optimizer *for more Information [10]* (lr=0.01) </br>
 Mehr Informationen sind im Jypeter notbook zu sehen.
 
  #### Das Model no.2:
@@ -131,7 +131,7 @@ Mehr Informationen sind im Jypeter notbook zu sehen.
 ##### Loss Function : 
 * The negative log likelihood loss 
 ##### optimizer :
-* Adam Optimizer (lr=0.0003) *for more Information [9]* 
+* Adam Optimizer (lr=0.0003) *for more Information [9]* </br>
 Mehr Informationen sind im Jypeter notbook zu sehen.
 
 ## Quellen
