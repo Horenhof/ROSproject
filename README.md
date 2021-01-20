@@ -115,6 +115,10 @@ Lesen Sie über Ableitung unter disesm Link : https://www.studyhelp.de/online-le
 ##### optimizer :
 * SGD () Optimizer *for more Information [10]* (lr=0.01) </br>
 Mehr Informationen sind im Jypeter notbook zu sehen.
+#### Ergebnis :
+Nach der letzten Epoche :
+Epoche ...30/30: ====== Train Loss : -0.875  ====== Test Loss : -0.907  ====== Accuracy 91.713%
+Test Accuracy (Overall): 91% (9170/10000)
 
  #### Das Model no.2:
  Das Model ist ein `Neuronales Netz`, das aus Fier `fullyconnected` Schichten besteht. zwei Hidden-layers, input und output Layer</br>
@@ -132,7 +136,14 @@ Mehr Informationen sind im Jypeter notbook zu sehen.
 * The negative log likelihood loss 
 ##### optimizer :
 * Adam Optimizer (lr=0.0003) *for more Information [9]* </br>
-Mehr Informationen sind im Jypeter notbook zu sehen.
+Mehr Informationen sind im Jypeter notbook zu sehen.</br>
+ #### Ergebnis :
+Nach der letzten Epoche :
+Epoche ...30/30: ====== Train Loss : -0.031  ====== Validation Loss : -0.030  ======Validation Accuracy 97.417%
+Test Accuracy (Overall): 97% (9756/10000)
+
+
+
 
 ## Quellen
 
