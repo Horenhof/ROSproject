@@ -1,0 +1,9 @@
+<launch>
+
+<node pkg="ki_robotics" type="camera.py" name="Camera" output="screen"/>
+<node pkg="ki_robotics" type="processor.py" name="Processor" output="screen"/>
+<node pkg="ki_robotics" type="AIService.py" name="AI" output="screen"/>
+<node pkg="ki_robotics" type="controller.py" name="Controller" output="screen"/>
+
+
+</launch>

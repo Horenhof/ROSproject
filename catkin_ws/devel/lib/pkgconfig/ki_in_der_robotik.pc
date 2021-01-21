@@ -1,0 +1,8 @@
+prefix=/home/horenhof/catkin_ws/devel
+
+Name: ki_in_der_robotik
+Description: Description of ki_in_der_robotik
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs sensor_msgs cv_bridge opencv2 message_runtime
