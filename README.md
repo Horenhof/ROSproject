@@ -165,3 +165,6 @@ Die meisten MNIST Models, die im Internet zu finden, haben 2 Hidden Layers. und 
 * [10] SGD Optimiyzer, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/optim.html#algorithms
 * [11] Adaptive Momentum (Adam),Brain Sci. ,Abgerufen am 18. Jan von https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7407771/#:~:text=The%20Adam%20optimizer%20had%20the,ability%20in%20classification%20and%20segmentation.
 * [12] Key Concepts of Deep Neural Networks, Abgerufen am 18. Jan von https://wiki.pathmind.com/neural-network#:~:text=More%20than%20three%20layers%20(including,qualifies%20as%20%E2%80%9Cdeep%E2%80%9D%20learning.
+
+
+https://we.tl/t-6y6PeGy5On
