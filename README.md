@@ -32,9 +32,9 @@ Das Projekt ist eine ROS-Anwendung, die einen Videostream (die Frames als Bilder
 ## Theoretical Background
 ### Ros
 ##### What is ROS?
-The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications. From drivers to state-of-the-art algorithms, and with powerful developer tools, ROS has what you need for your next robotics project. And it's all open source.[1]
+"The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications. From drivers to state-of-the-art algorithms, and with powerful developer tools, ROS has what you need for your next robotics project. And it's all open source."[1]
 
-##### Die fundamentale Bestandteile von ROS sind : [2]
+##### Die fundamentale Bestandteile von ROS sind : *Quelle* [2]
 * *Nodes*: Ein Knoten ist eine ausführbare Datei, die ROS verwendet, um mit anderen Knoten zu kommunizieren.
 
 * *Messages*: ROS-Datentyp, der beim Abonnieren oder Veröffentlichen eines Themas verwendet wird.
@@ -49,7 +49,7 @@ Ros bietet die Möglichkeit zur Erstellung von Services und Messages eigener Dat
 
 ### Neuronale Netze
 
-Neuronale Netze, oft auch als künstliche, neuronale Netze oder artificial neural networks, bezeichnet, sind informationsverarbeitende Systeme, die aus einer großen Anzahl einfacher Einheiten (Zellen, Neuronen) bestehen, die sich Informationen in Form der Aktivierung der Zellen über gerichtete Verbindungen (connections, links) zusenden.[3]
+"Neuronale Netze, oft auch als künstliche, neuronale Netze oder artificial neural networks, bezeichnet, sind informationsverarbeitende Systeme, die aus einer großen Anzahl einfacher Einheiten (Zellen, Neuronen) bestehen, die sich Informationen in Form der Aktivierung der Zellen über gerichtete Verbindungen (connections, links) zusenden."[3]
 
 ### Deep Neural Networks :
 oft `Feedforword neural Networks` oder `multilayer perceptrons (MLPs)` gennant.[4]. Das Ziel von neuronalen Netzen ist es, eine Funktion zu approximieren. 
@@ -142,6 +142,12 @@ Nach der letzten Epoche :
 Epoche ...30/30: ====== Train Loss : -0.031  ====== Validation Loss : -0.030  ======Validation Accuracy 97.417%
 Test Accuracy (Overall): 97% (9756/10000)
 
+Im Vergleich zum Model no.1 haben Adam Optimizer und die Anzahl der Schichten eine bessre Genauikgeit geschafft.</br>
+
+"Adam reduziert die Rechenkosten, benötigt weniger Speicher für die Implementierung und ist für die diagonale Neuskalierung der Gradienten unveränderlich. Dies behebt die Probleme wie große Datenmengen, Hyperparameter, verrauschte Daten, unzureichende Gradienten und nichtstationäre Probleme, die eine kleine Abstimmung erfordern, ist jedoch nicht darauf beschränkt."[11] </br>
+
+Je mehr Schichten man hat, desto mehr Merkmale in den Bildern in den Schichten erkannt werden. [12] </br>
+Die meisten MNIST Models, die im Internet zu finden, haben 2 Hidden Layers. und das wurde hier gezeigt, dass 2 Hidden Layers besser Accuricy geschafft haben.
 
 
 
@@ -157,3 +163,5 @@ Test Accuracy (Overall): 97% (9756/10000)
 * [8] likelihood loss, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
 * [9] Adam Optimizer, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/optim.html
 * [10] SGD Optimiyzer, Abgerufen am 18. Jan von https://pytorch.org/docs/stable/optim.html#algorithms
+* [11] Adaptive Momentum (Adam),Brain Sci. ,Abgerufen am 18. Jan von https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7407771/#:~:text=The%20Adam%20optimizer%20had%20the,ability%20in%20classification%20and%20segmentation.
+* [12] Key Concepts of Deep Neural Networks, Abgerufen am 18. Jan von https://wiki.pathmind.com/neural-network#:~:text=More%20than%20three%20layers%20(including,qualifies%20as%20%E2%80%9Cdeep%E2%80%9D%20learning.
